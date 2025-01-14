@@ -1,0 +1,35 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
+
+local Window = OrionLib:MakeWindow({
+    Name = "Menu Principal",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionConfig"
+})
+
+local MainTab = Window:MakeTab({
+    Name = "Funções",
+    Icon = "rbxassetid://4483345998", -- Ícone fictício
+    PremiumOnly = false
+})
+
+-- Toggle "Auto Roubar Itens"
+MainTab:AddToggle({
+    Name = "Auto Revistar",
+    Default = false,
+    Callback = function(Value)
+        print("Auto Roubar Itens: ", Value and "Ativado" or "Desativado")
+    end
+})
+
+-- Toggle "Auto Kill"
+MainTab:AddToggle({
+    Name = "Auto Kill",
+    Default = false,
+    Callback = function(Value)
+        print("Auto Kill: ", Value and "Ativado" or "Desativado")
+    end
+})
+
+--
+OrionLib:Init()
