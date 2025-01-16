@@ -1,6 +1,9 @@
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Workspace = game:GetService("Workspace")
+local UserInputService = game:GetService("UserInputService")
+
+local isUIVisible = true  -- Controle se a UI está visível ou não
 
 local function isPlayerInLineOfSight(player)
     local character = player.Character
@@ -35,6 +38,8 @@ local function createUIForPlayer(player)
     if player == LocalPlayer then return end
 
     local function addBillboard()
+        if not isUIVisible then return end  -- Se a UI não deve ser exibida, não cria a UI
+
         local character = player.Character
         if not character then return end
 
@@ -151,6 +156,26 @@ local function updateUI()
         end
     end
 end
+
+-- Função para parar a UI ao pressionar a tecla 'P'
+UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+    if gameProcessedEvent then return end  -- Ignora se a entrada já foi processada
+
+    if input.KeyCode == Enum.KeyCode.P then
+        isUIVisible = not isUIVisible  -- Alterna a visibilidade da UI
+        if not isUIVisible then
+            -- Remove todos os UI existentes
+            for _, player in ipairs(Players:GetPlayers()) do
+                if player.Character then
+                    local head = player.Character:FindFirstChild("Head")
+                    if head and head:FindFirstChild("PlayerUI") then
+                        head.PlayerUI:Destroy()
+                    end
+                end
+            end
+        end
+    end
+end)
 
 while true do
     wait(5)
