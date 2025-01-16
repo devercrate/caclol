@@ -1,4 +1,4 @@
-local itens = {"AK47", "Uzi", "IA2", "Hi Power", "G3", "Tratamento", "PARAFAL", "Faca", "NATALINA"} -- Lista de itens a pegar
+local itens = {"AK47", "Uzi", "IA2", "Hi Power", "G3", "PARAFAL""} -- Lista de itens a pegar
 
 local args = {
     [1] = "mudaInv",
