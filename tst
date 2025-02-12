@@ -107,7 +107,22 @@ local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.",
 local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 
+local localPlayer = Players.LocalPlayer
+local teamName = "STAFF" -- Nome do time a ser verificado
 
+local checkActive = false -- Variável para ativar/desativar a verificação
+
+-- Função para verificar jogadores na equipe "STAFF"
+local function checkStaffTeam()
+    if not checkActive then return end -- Se o toggle estiver desligado, não faz nada
+    
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player.Team and player.Team.Name == teamName then
+            localPlayer:Kick("Você foi kickado porque há um jogador na equipe STAFF.")
+            return
+        end
+    end
+end
 
 
 local VisualTab = Window:CreateTab("Visual")
@@ -319,3 +334,25 @@ addTeleportButton("Teleport Banco", CFrame.new(-27.2709007, 11.5685892, 418.2006
 addTeleportButton("Teleport Ilegal", CFrame.new(1129.86682, 18.493576, -2082.05591, -1, 0, 0, 0, 1, 0, 0, 0, -1))
 addTeleportButton("Teleport predio 1", CFrame.new(-1595.23328, 204.074341, 555.895386, 0.939687431, -0.34203434, 1.81794167e-06, 1.81794167e-06, 1.02519989e-05, 1, -0.34203434, -0.93968749, 1.02519989e-05))
 addTeleportButton("Teleport Devs Mini City", CFrame.new(2555.44263, 303.167755, -1004.13763, -0.422592998, 0, 0.906319618, 0, 1, 0, -0.906319618, 0, -0.422592998))
+
+
+local otoTab = Window:CreateTab("Outros")
+
+local tgle = otoTab:CreateToggle({
+    Name = "anti staff",
+    CurrentValue = false,
+    Flag = "StaffCheckerToggle",
+    Callback = function(Value)
+        checkActive = Value -- Ativa ou desativa a verificação
+    end
+})
+
+-- Loop para checar a cada 5 segundos, apenas se ativado
+task.spawn(function()
+    while true do
+        if checkActive then
+            checkStaffTeam()
+        end
+        task.wait(5)
+    end
+end)
