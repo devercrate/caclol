@@ -437,3 +437,26 @@ ToggleButton.MouseButton1Click:Connect(function()
 end)
    end,
 })
+
+local svh = otoTab:CreateButton({
+   Name = "server hop",
+   Callback = function()
+   local TeleportService = game:GetService("TeleportService")
+local PlaceID = 4766797229  -- Coloque o ID do jogo que você deseja teleportar
+
+-- Função de server hop
+local function serverHop()
+    local success, errorMessage = pcall(function()
+        TeleportService:Teleport(PlaceID)
+    end)
+
+    if success then
+        print("Teleportando para o servidor...")
+    else
+        warn("Erro ao tentar teleportar: " .. errorMessage)
+    end
+end
+
+serverHop()  -- Chama a função para fazer o server hop
+   end,
+})
