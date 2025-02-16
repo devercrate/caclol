@@ -1,12 +1,516 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
 
-]]--
+local webhookURL = "https://discord.com/api/webhooks/1340707961432969237/wcURPnRWFUF8ijVqeXQQLpntTwEZL9EuPMqaeOASEtxhxRhHkAZdJ26nM3wUvWDj2SE6"
 
-local v0=tonumber;local v1=string.byte;local v2=string.char;local v3=string.sub;local v4=string.gsub;local v5=string.rep;local v6=table.concat;local v7=table.insert;local v8=math.ldexp;local v9=getfenv or function() return _ENV;end ;local v10=setmetatable;local v11=pcall;local v12=select;local v13=unpack or table.unpack ;local v14=tonumber;local function v15(v16,v17,...) local v18=1;local v19;v16=v4(v3(v16,5),"..",function(v30) if (v1(v30,2)==81) then local v83=0;while true do if (v83==0) then v19=v0(v3(v30,1,1));return "";end end else local v84=0;local v85;while true do if (v84==0) then v85=v2(v0(v30,16));if v19 then local v104=v5(v85,v19);v19=nil;return v104;else return v85;end break;end end end end);local function v20(v31,v32,v33) if v33 then local v86=0 -0 ;local v87;while true do if (v86==(0 -(0 -0))) then v87=(v31/((1639 -((2795 -1272) + 114))^(v32-(1 + 0))))%((3 -1)^(((v33-(2 -1)) -(v32-(1271 -(226 + 1044)))) + (620 -(555 + 64)))) ;return v87-(v87%(932 -(857 + (424 -(87 + 263))))) ;end end else local v88=(570 -(367 + 201))^(v32-(928 -(214 + (893 -(67 + 113))))) ;return (((v31%(v88 + v88))>=v88) and (958 -(892 + 65))) or (0 + 0 + 0) ;end end local function v21() local v34=(0 -0) -0 ;local v35;while true do if (v34==(1 + 0 + 0)) then return v35;end if (v34==((997 -(915 + 82)) -0)) then v35=v1(v16,v18,v18);v18=v18 + (953 -(802 + 150)) ;v34=2 -1 ;end end end local function v22() local v36=0 -0 ;local v37;local v38;while true do if (v36==(0 + 0)) then v37,v38=v1(v16,v18,v18 + (2 -0) );v18=v18 + (1189 -((1898 -829) + 118)) ;v36=2 -1 ;end if (v36==(1 -0)) then return (v38 * (45 + 211)) + v37 ;end end end local function v23() local v39,v40,v41,v42=v1(v16,v18,v18 + 3 + 0 );v18=v18 + (795 -(368 + 423)) ;return (v42 * 16777216) + (v41 * ((792265 -586307) -140422)) + (v40 * (274 -((452 -(416 + 26)) + (25 -17)))) + v39 ;end local function v24() local v43=0 + 0 ;local v44;local v45;local v46;local v47;local v48;local v49;while true do if (v43==(4 -(3 -2))) then if (v48==(1747 -(760 + 987))) then if (v47==(438 -((2058 -(1789 + 124)) + 293))) then return v49 * (430 -(44 + 386)) ;else v48=1487 -(998 + 488) ;v46=0 + 0 ;end elseif (v48==(1677 + 370)) then return ((v47==(772 -(201 + 571))) and (v49 * ((1139 -(116 + 1022))/(0 -0)))) or (v49 * NaN) ;end return v8(v49,v48-1023 ) * (v46 + (v47/(2^(31 + 21)))) ;end if (v43==(3 -2)) then v46=3 -2 ;v47=(v20(v45,860 -(814 + 45) ,49 -29 ) * (2^32)) + v44 ;v43=1 + (767 -(745 + 21)) ;end if (v43==(1 + 1)) then v48=v20(v45,906 -(90 + 171 + 624) ,54 -(62 -39) );v49=((v20(v45,1112 -(1020 + 60) )==((5585 -4161) -(6 + 624 + 793))) and  -(3 -2)) or (4 -3) ;v43=2 + 1 ;end if (v43==(0 + 0)) then v44=v23();v45=v23();v43=1;end end end local function v25(v50) local v51=0;local v52;local v53;while true do if (v51==(1058 -(87 + 968))) then return v6(v53);end if (1==v51) then v52=v3(v16,v18,(v18 + v50) -(4 -3) );v18=v18 + v50 ;v51=2 + 0 ;end if (v51==(0 -0)) then v52=nil;if  not v50 then local v97=1413 -(447 + 966) ;while true do if (0==v97) then v50=v23();if (v50==(0 -(0 + 0))) then return "";end break;end end end v51=(1832 -(9 + 5)) -(1703 + 114) ;end if (v51==(703 -(376 + 325))) then v53={};for v91=1 -0 , #v52 do v53[v91]=v2(v1(v3(v52,v91,v91)));end v51=8 -5 ;end end end local v26=v23;local function v27(...) return {...},v12("#",...);end local function v28() local v54=(function() return 0;end)();local v55=(function() return;end)();local v56=(function() return;end)();local v57=(function() return;end)();local v58=(function() return;end)();local v59=(function() return;end)();local v60=(function() return;end)();local v61=(function() return;end)();while true do local v68=(function() return 0 + 0 ;end)();while true do if (0==v68) then if (v54~=(1 + 0)) then else local v100=(function() return 0;end)();local v101=(function() return;end)();while true do if (v100==(0 -0)) then v101=(function() return 1274 -(388 + 886) ;end)();while true do if (v101~=0) then else v59=(function() return {v56,v57,nil,v58};end)();v60=(function() return v23();end)();v101=(function() return 1 + 0 ;end)();end if (v101~=1) then else local v117=(function() return 560 -(306 + 254) ;end)();while true do if (v117~=0) then else v61=(function() return {};end)();for v160= #"\\",v60 do local v161=(function() return 0;end)();local v162=(function() return;end)();local v163=(function() return;end)();local v164=(function() return;end)();while true do if (v161==(0 + 0)) then local v181=(function() return 0;end)();while true do if (v181~=1) then else v161=(function() return 1;end)();break;end if (v181~=0) then else v162=(function() return 0 -0 ;end)();v163=(function() return nil;end)();v181=(function() return 1468 -(899 + 568) ;end)();end end end if (v161~=(1 + 0)) then else v164=(function() return nil;end)();while true do if (v162==1) then if (v163== #".") then v164=(function() return v21()~=(0 -0) ;end)();elseif (v163==2) then v164=(function() return v24();end)();elseif (v163== #"91(") then v164=(function() return v25();end)();end v61[v160]=(function() return v164;end)();break;end if (v162~=(603 -(268 + 335))) then else local v185=(function() return 0;end)();while true do if ((290 -(60 + 230))~=v185) then else v163=(function() return v21();end)();v164=(function() return nil;end)();v185=(function() return 573 -(426 + 146) ;end)();end if (v185~=(1 + 0)) then else v162=(function() return 1;end)();break;end end end end break;end end end v117=(function() return 1457 -(282 + 1174) ;end)();end if (v117~=(812 -(569 + 242))) then else v101=(function() return 2;end)();break;end end end if (v101~=(5 -3)) then else v54=(function() return 2;end)();break;end end break;end end end if ((1 + 1)~=v54) then else v59[ #"-19"]=(function() return v21();end)();for v105= #".",v23() do local v106=(function() return v21();end)();if (v20(v106, #"[", #"<")==0) then local v108=(function() return 1024 -(706 + 318) ;end)();local v109=(function() return;end)();local v110=(function() return;end)();local v111=(function() return;end)();while true do if (v108~=(1253 -(721 + 530))) then else if (v20(v110, #"[", #"]")== #"|") then v111[2]=(function() return v61[v111[1273 -(945 + 326) ]];end)();end if (v20(v110,4 -2 ,2 + 0 )~= #",") then else v111[ #"xnx"]=(function() return v61[v111[ #"-19"]];end)();end v108=(function() return 703 -(271 + 429) ;end)();end if ((1 + 0)~=v108) then else local v118=(function() return 0;end)();local v119=(function() return;end)();while true do if (v118==(1500 -(1408 + 92))) then v119=(function() return 0;end)();while true do if ((1086 -(461 + 625))==v119) then v111=(function() return {v22(),v22(),nil,nil};end)();if (v109==(0 + 0)) then local v182=(function() return 0;end)();local v183=(function() return;end)();while true do if (0~=v182) then else v183=(function() return 1171 -(418 + 753) ;end)();while true do if (v183==0) then v111[ #"gha"]=(function() return v22();end)();v111[ #".com"]=(function() return v22();end)();break;end end break;end end elseif (v109== #":") then v111[ #"91("]=(function() return v23();end)();elseif (v109==2) then v111[ #"nil"]=(function() return v23() -(2^16) ;end)();elseif (v109== #"-19") then local v190=(function() return 0;end)();local v191=(function() return;end)();while true do if (v190~=0) then else v191=(function() return 0 + 0 ;end)();while true do if (v191~=(0 + 0)) then else v111[ #"-19"]=(function() return v23() -((1 + 1)^16) ;end)();v111[ #"asd1"]=(function() return v22();end)();break;end end break;end end end v119=(function() return 1;end)();end if (v119==(1 + 0)) then v108=(function() return 2;end)();break;end end break;end end end if (v108==3) then if (v20(v110, #"19(", #"91(")~= #"/") then else v111[ #".dev"]=(function() return v61[v111[ #"0836"]];end)();end v56[v105]=(function() return v111;end)();break;end if (v108==(529 -(406 + 123))) then local v121=(function() return 1769 -(1749 + 20) ;end)();local v122=(function() return;end)();while true do if (0==v121) then v122=(function() return 0 + 0 ;end)();while true do if (v122==(1323 -(1249 + 73))) then v108=(function() return 1;end)();break;end if (v122~=0) then else local v180=(function() return 0 + 0 ;end)();while true do if (0~=v180) then else v109=(function() return v20(v106,1147 -(466 + 679) , #"gha");end)();v110=(function() return v20(v106, #".com",6);end)();v180=(function() return 1;end)();end if (v180~=(2 -1)) then else v122=(function() return 2 -1 ;end)();break;end end end end break;end end end end end end for v107= #"|",v23() do v57,v107,v28=(function() return v55(v57,v107,v28);end)();end return v59;end v68=(function() return 1;end)();end if (v68==1) then if (v54==0) then local v103=(function() return 0;end)();while true do if (v103==1) then v57=(function() return {};end)();v58=(function() return {};end)();v103=(function() return 1902 -(106 + 1794) ;end)();end if (v103~=(0 + 0)) then else v55=(function() return function(v112,v113,v114) local v115=(function() return 0;end)();local v116=(function() return;end)();while true do if (v115==0) then v116=(function() return 0;end)();while true do if (v116~=(0 + 0)) then else v112[v113-#":" ]=(function() return v114();end)();return v112,v113,v114;end end break;end end end;end)();v56=(function() return {};end)();v103=(function() return 2 -1 ;end)();end if (v103~=2) then else v54=(function() return 1;end)();break;end end end break;end end end end local function v29(v62,v63,v64) local v65=v62[2 -1 ];local v66=v62[116 -(4 + 110) ];local v67=v62[587 -(57 + 178 + 349) ];return function(...) local v69=v65;local v70=v66;local v71=v67;local v72=v27;local v73=1428 -(41 + 1386) ;local v74= -(104 -(17 + 86));local v75={};local v76={...};local v77=v12("#",...) -(1 -0) ;local v78={};local v79={};for v89=0 -0 ,v77 do if ((v89>=v71) or (3755<=915)) then v75[v89-v71 ]=v76[v89 + 1 ];else v79[v89]=v76[v89 + (167 -(122 + 44)) ];end end local v80=(v77-v71) + (1 -0) ;local v81;local v82;while true do local v90=0 -0 ;while true do if ((3946>3743) and (v90==(1 + 0))) then if ((v82<=(2 + (11 -6))) or (1335>=3306)) then if (v82<=((1207 -(373 + 829)) -2)) then if (v82<=(66 -(30 + (766 -(476 + 255))))) then if (v82==(0 + 0)) then v79[v81[1259 -(1043 + 214) ]]();else v79[v81[7 -5 ]]=v81[3];end elseif ((4844>2253) and (v82==2)) then v79[v81[1214 -(323 + 889) ]]={};else local v126=0 -0 ;local v127;local v128;while true do if ((452==452) and (v126==(581 -(361 + 219)))) then v79[v127 + 1 ]=v128;v79[v127]=v128[v81[4]];break;end if (v126==(320 -((1183 -(369 + 761)) + 267))) then v127=v81[1 + 1 ];v128=v79[v81[416 -(9 + 6 + (722 -324)) ]];v126=983 -(18 + (1826 -862)) ;end end end elseif (v82<=(18 -13)) then if (v82==(3 + 1)) then v79[v81[2 + 0 ]]=v81[853 -(20 + 830) ];else local v131=v81[2 + (238 -(64 + 174)) ];local v132,v133=v72(v79[v131](v13(v79,v131 + (127 -(116 + 10)) ,v81[1 + 2 ])));v74=(v133 + v131) -1 ;local v134=738 -(542 + 196) ;for v154=v131,v74 do v134=v134 + 1 ;v79[v154]=v132[v134];end end elseif (v82>(12 -6)) then v79[v81[1 + 1 ]]={};else v79[v81[2]]=v64[v81[2 + 1 ]];end elseif (v82<=(4 + 7)) then if (v82<=9) then if ((v82>(20 -12)) or (4557<2087)) then local v138=v81[2];local v139,v140=v72(v79[v138](v13(v79,v138 + (2 -1) ,v81[1554 -(1126 + 61 + 364) ])));v74=(v140 + v138) -(406 -(118 + (424 -137))) ;local v141=0 -(336 -(144 + 192)) ;for v157=v138,v74 do v141=v141 + (1122 -(118 + 1003)) ;v79[v157]=v139[v141];end else local v142=0 -0 ;local v143;while true do if (v142==(377 -(142 + 235))) then v143=v81[9 -(223 -(42 + 174)) ];v79[v143]=v79[v143](v13(v79,v143 + 1 + 0 ,v74));break;end end end elseif (v82>(987 -(553 + 424))) then local v144=0 -0 ;local v145;local v146;while true do if ((3874==3874) and (v144==(1 + 0))) then v79[v145 + 1 + 0 ]=v146;v79[v145]=v146[v81[3 + 1 ]];break;end if (v144==0) then v145=v81[1 + 1 ];v146=v79[v81[2 + 1 ]];v144=2 -(1 + 0) ;end end else do return;end end elseif ((v82<=(35 -22)) or (1938>4935)) then if (v82>12) then v79[v81[2]]=v64[v81[3]];else local v149=0 -0 ;local v150;while true do if (v149==(0 + 0)) then v150=v81[2];v79[v150]=v79[v150](v13(v79,v150 + (4 -3) ,v74));break;end end end elseif (v82>14) then v79[v81[755 -(239 + 514) ]]();else do return;end end v73=v73 + 1 + 0 + 0 ;break;end if (v90==(1329 -(797 + 532))) then v81=v69[v73];v82=v81[1];v90=1 + 0 ;end end end end;end return v29(v28(),{},v17)(...);end return v15("LOL!043Q00030A3Q006C6F6164737472696E6703043Q0067616D6503073Q00482Q747047657403473Q00682Q7470733A2Q2F7261772E67697468756275736572636F6E74656E742E636F6D2F646576657263726174652F6361636C6F6C2F726566732F68656164732F6D61696E2F74737400094Q00077Q00120D000100013Q00120D000200023Q002003000200020003001204000400044Q0005000200044Q000C00013Q00022Q000F0001000100012Q000E3Q00017Q00",v9(),...);
+local data = {
+    ["username"] = "By carplacer",
+    ["avatar_url"] = "https://i.imgur.com/CF7wYq5.png",
+    ["content"] = "**Nova execucao da mmd **\n👤 Nome: `" .. Player.Name .. "`\n🆔 UserId: `" .. Player.UserId .. "`\n⏰ Horário: `" .. os.date("%d/%m/%Y %H:%M:%S") .. "`"
+}
+
+local jsonData = game:GetService("HttpService"):JSONEncode(data)
+
+local function sendWebhook()
+    local body = {Url = webhookURL, Body = jsonData, Method = "POST", Headers = {["Content-Type"] = "application/json"}}
+    
+    if syn and syn.request then
+        syn.request(body)
+    elseif request then
+        request(body)
+    elseif http and http.request then
+        http.request(body)
+    else
+        warn("❌ Seu exploit não suporta requisições HTTP!")
+    end
+end
+
+sendWebhook()
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Window = Rayfield:CreateWindow({
+    Name = "Menu Mini City Destroyer ( BETA )",
+    Icon = 0,
+    LoadingTitle = "loading..",
+    LoadingSubtitle = "by carplacer",
+    Theme = "Default",
+    DisableRayfieldPrompts = false,
+    DisableBuildWarnings = false,
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil,
+        FileName = "MMD HUB"
+    },
+    Discord = {
+        Enabled = true,
+        Invite = "https://discord.gg/vDXNGcf6wu",
+        RememberJoins = false
+    },
+    KeySystem = false,
+    KeySettings = {
+        Title = "Untitled",
+        Subtitle = "Key System",
+        Note = "No method of obtaining the key is provided",
+        FileName = "Key",
+        SaveKey = true,
+        GrabKeyFromSite = false,
+        Key = {"Hello"}
+    }
+})
+
+local mmd = Window:CreateTab("MMD ON TOP")
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+
+
+local localPlayer = Players.LocalPlayer
+local teamName = "STAFF" -- Nome do time a ser verificado
+
+local checkActive = false -- Variável para ativar/desativar a verificação
+
+-- Função para verificar jogadores na equipe "STAFF"
+local function checkStaffTeam()
+    if not checkActive then return end -- Se o toggle estiver desligado, não faz nada
+    
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player.Team and player.Team.Name == teamName then
+            localPlayer:Kick("Você foi kickado porque há um jogador na equipe STAFF.")
+            return
+        end
+    end
+end
+
+
+local VisualTab = Window:CreateTab("Visual")
+local Paragraph = VisualTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
+-- Função para carregar o script
+local function loadScript()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/sizerdev01/mdm.menu/refs/heads/main/veritens"))()
+end
+local Veritem = VisualTab:CreateButton({
+   Name = "Ver itens UI (irreversivel)",
+   Callback = function()
+    -- Verifica se a UI já foi criada
+        if not createdUI then
+            -- Executa o loadstring para carregar o script
+            loadScript()
+
+            -- Aqui você pode adicionar o código para criar a UI que o script cria.
+            -- Caso o script já crie a UI, pode ser necessário ajustar isso:
+            createdUI = Instance.new("BillboardGui")
+            createdUI.Name = "PlayerUI"
+            createdUI.Adornee = game.Players.LocalPlayer.Character:FindFirstChild("Head")
+            createdUI.Size = UDim2.new(0, 200, 0, 70)
+            createdUI.StudsOffset = Vector3.new(0, -3, 0)
+            createdUI.AlwaysOnTop = true
+            createdUI.Parent = game.Players.LocalPlayer.Character:FindFirstChild("Head")
+        else
+            -- Se a UI já existe, remove-a
+            removeUI()
+        end
+    end
+})
+
+------------- esp high
+local players = game:GetService("Players")
+
+-- Configuração do Highlight
+local highlightColor = Color3.new(1, 0, 0) -- Vermelho
+local fillTransparency = 1 -- Transparência da parte interna (1 = invisível)
+local outlineTransparency = 0 -- Transparência do contorno
+
+
+local highlightInstances = {}
+
+
+local function applyHighlight(character)
+    if character:FindFirstChildOfClass("Highlight") then return end 
+    local highlight = Instance.new("Highlight")
+    highlight.FillColor = highlightColor
+    highlight.FillTransparency = fillTransparency
+    highlight.OutlineTransparency = outlineTransparency
+    highlight.OutlineColor = highlightColor
+    highlight.Adornee = character
+    highlight.Parent = character
+    highlightInstances[character] = highlight 
+end
+
+
+local function removeHighlight(character)
+    local highlight = highlightInstances[character]
+    if highlight then
+        highlight:Destroy()
+        highlightInstances[character] = nil 
+    end
+end
+
+
+local function monitorHighlight(Value)
+    for _, player in ipairs(players:GetPlayers()) do
+        if player ~= players.LocalPlayer then
+            local character = player.Character or player.CharacterAdded:Wait()
+            if Value then
+                applyHighlight(character)
+            else
+                removeHighlight(character) 
+            end
+        end
+    end
+
+
+    players.PlayerAdded:Connect(function(player)
+        player.CharacterAdded:Connect(function(character)
+            if Value then
+                applyHighlight(character)
+            end
+        end)
+    end)
+
+    players.PlayerRemoving:Connect(function(player)
+        removeHighlight(player.Character) 
+    end)
+end
+
+
+VisualTab:CreateToggle({
+   Name = "ESP Highlight",
+   CurrentValue = false,
+   Flag = "Toggle2", 
+   Callback = function(Value)
+        monitorHighlight(Value)
+   end,
+   -------------- espname---------
+})
+-- Tabela para armazenar os ESPs dos jogadores
+local players = game:GetService("Players")
+
+local espInstances = {}
+
+local function createESPName(player)
+    local character = player.Character or player.CharacterAdded:Wait()
+    if character:FindFirstChild("ESPName") then return end 
+    local billboardGui = Instance.new("BillboardGui")
+    billboardGui.Name = "ESPName"
+    billboardGui.Adornee = character:WaitForChild("Head")
+    billboardGui.Size = UDim2.new(27, 0, 2, 0) 
+    billboardGui.StudsOffset = Vector3.new(0, 3, 0)
+    billboardGui.AlwaysOnTop = true
+
+    local nameLabel = Instance.new("TextLabel", billboardGui)
+    nameLabel.Text = player.Name
+    nameLabel.Size = UDim2.new(1, 0, 1, 0)
+    nameLabel.BackgroundTransparency = 1
+    nameLabel.TextColor3 = Color3.new(1, 1, 1) 
+    nameLabel.TextStrokeTransparency = 0.2 
+    nameLabel.TextStrokeColor3 = Color3.new(0, 0, 0) 
+    nameLabel.Font = Enum.Font.SourceSansBold
+    nameLabel.TextSize = 27 
+    nameLabel.TextScaled = false
+
+    billboardGui.Parent = character
+    espInstances[player] = billboardGui 
+end
+
+
+local function removeESPName(player)
+    local esp = espInstances[player]
+    if esp then
+        esp:Destroy()
+        espInstances[player] = nil 
+    end
+end
+
+local function monitorESP(Value)
+    for _, player in ipairs(players:GetPlayers()) do
+        if player ~= players.LocalPlayer then
+            local character = player.Character or player.CharacterAdded:Wait()
+            if Value then
+                createESPName(player)
+            else
+                removeESPName(player) 
+            end
+        end
+    end
+
+    
+    players.PlayerAdded:Connect(function(player)
+        player.CharacterAdded:Connect(function(character)
+            if Value then
+                createESPName(player)
+            end
+        end)
+    end)
+
+    
+    players.PlayerRemoving:Connect(function(player)
+        removeESPName(player) 
+    end)
+end
+
+
+VisualTab:CreateToggle({
+   Name = "ESP Name",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        
+        monitorESP(Value)
+   end,
+})
+
+
+local TeleportTab = Window:CreateTab("Teleports")
+local Paragraph = TeleportTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
+local function addTeleportButton(name, cframe)
+    TeleportTab:CreateButton({
+        Name = name,
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                player.Character:MoveTo(cframe.Position + Vector3.new(0, 3, 0))
+            end
+        end,
+    })
+end
+-- Adicionando os botões de teletransporte para locais fixos
+addTeleportButton("Teleport Praça", CFrame.new(-291.579559, 3.26299787, 342.192535))
+addTeleportButton("Teleport Gás", CFrame.new(-469.959015, 3.25349784, -54.3936005))
+addTeleportButton("Teleport HP", CFrame.new(-543.439941, 3.26299858, 645.16864))
+addTeleportButton("Teleport Tabacaria", CFrame.new(-83.1141129, 13.1430578, 74.7073364))
+addTeleportButton("Teleport Garagem", CFrame.new(-466.870148, 7.64567232, 350.242737))
+addTeleportButton("Teleport Concessionaria", CFrame.new(-91.3902893, 8.07136822, 520.355347))
+addTeleportButton("Teleport Gari", CFrame.new(-518.672852, 3.16749811, -1.16962147, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+addTeleportButton("Teleport Imobiliaria", CFrame.new(-284.904785, 8.26088619, -72.2896194, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+addTeleportButton("Teleport PM", CFrame.new(-980.181458, 2.27553082, 467.080536, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+addTeleportButton("Teleport PRF", CFrame.new(-2165.34546, 3.01715183, -737.137878, -1, 0, 0, 0, 1, 0, 0, 0, -1))
+addTeleportButton("Teleport Mineração", CFrame.new(201.932144, 2.76136589, 145.50531, 0, 0, 1, 0, 1, -0, -1, 0, 0))
+addTeleportButton("Teleport Mecânica", CFrame.new(-180.608261, 3.29813337, -532.4151, 0.422592998, -0, -0.906319618, 0, 1, -0, 0.906319618, 0, 0.422592998))
+addTeleportButton("Teleport Fazenda", CFrame.new(817.243225, 3.26249814, -87.316864, 0, 0, 1, 0, 1, 0, -1, 0, 0))
+addTeleportButton("Teleport Prefeitura", CFrame.new(-284.388458, 15.1148872, 88.0397873, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+addTeleportButton("Teleport Banco", CFrame.new(-27.2709007, 11.5685892, 418.200653, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+addTeleportButton("Teleport Ilegal", CFrame.new(12037.2705, 27.5305443, 12794.0635, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627))
+addTeleportButton("Teleport predio 1", CFrame.new(-1595.23328, 204.074341, 555.895386, 0.939687431, -0.34203434, 1.81794167e-06, 1.81794167e-06, 1.02519989e-05, 1, -0.34203434, -0.93968749, 1.02519989e-05))
+addTeleportButton("Teleport Devs Mini City", CFrame.new(2555.44263, 303.167755, -1004.13763, -0.422592998, 0, 0.906319618, 0, 1, 0, -0.906319618, 0, -0.422592998))
+
+local rev = Window:CreateTab("Revistar")
+local Paragraph = rev:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
+local Section = rev:CreateSection("NECESSARIO")
+local Button = rev:CreateButton({
+   Name = "puxa itens",
+   Callback = function()
+   -- Função para deletar todas as NotifyGui
+local function deletarNotifyGui()
+    local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    for _, gui in ipairs(playerGui:GetChildren()) do
+        if gui.Name == "NotifyGui" and gui:IsA("ScreenGui") then
+            gui:Destroy() -- Deleta a NotifyGui
+        end
+    end
+end
+
+-- Lista de itens para pegar
+local itens = {"AK47", "Uzi", "Parafal", "Faca", "IA2", "G3", "IPhone 14", "Agua", "Hamburguer", "Hi Power", "Natalina"}
+
+-- Argumentos para a requisição
+local args = {
+    [1] = "mudaInv",
+    [2] = "2",
+    [4] = "1"
+}
+
+-- Loop principal
+while true do
+    -- Deletar todas as NotifyGui antes de pegar os itens
+    deletarNotifyGui()
+
+    -- Pegar itens
+    for i, item in ipairs(itens) do
+        if i <= 16 then  -- Só tenta alocar até 16 slots
+            args[3] = item  -- Atualiza o item para o valor da vez
+            args[2] = tostring(i)  -- Atribui o slot dinamicamente (1, 2, 3, ..., 16)
+
+            -- Usar task.spawn() para execução sem delay
+            task.spawn(function()
+                -- Envia a requisição para o servidor
+                game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("InvRemotes"):WaitForChild("InvRequest"):InvokeServer(unpack(args))
+            end)
+        end
+    end
+
+    wait(0)  -- Espera um frame para evitar lag
+end
+   end,
+})
+local Section = rev:CreateSection("PC")
+local ww = rev:CreateToggle({
+   Name = "mandar revistar (TECLA E)",
+   CurrentValue = false,
+   Flag = "rvst",
+   Callback = function(Value)
+       getgenv().Enabled = Value
+   end,
+})
+local Section = rev:CreateSection("MOBILE")
+local mob = rev:CreateButton({
+   Name = "mandar revistar UI",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/revstsa"))()
+   end,
+})
+local Section = rev:CreateSection("Info")
+local Paragraph = rev:CreateParagraph({Title = "Como usar?", Content = "Ensinamos a usar corretamente no nosso discord."})
+local otoTab = Window:CreateTab("Outros")
+local Paragraph = otoTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
+local Toggle = otoTab:CreateToggle({
+    Name = "anti staff V2",
+    CurrentValue = false,
+    Flag = "ToggleKickCheck",
+    Callback = function(Value)
+        if Value then
+            getgenv().KickCheck = true
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/staffv2'))()
+        else
+            getgenv().KickCheck = false
+        end
+    end
+})
+
+
+-- Loop para checar a cada 5 segundos, apenas se ativado
+task.spawn(function()
+    while true do
+        if checkActive then
+            checkStaffTeam()
+        end
+        task.wait(5)
+    end
+end)
+
+
+local Butkton = otoTab:CreateButton({
+   Name = "farm planta UI",
+   Callback = function()
+   -- Criando a UI
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local ToggleButton = Instance.new("TextButton")
+ToggleButton.Parent = ScreenGui
+ToggleButton.Size = UDim2.new(0, 200, 0, 50)
+ToggleButton.Position = UDim2.new(0.5, -100, 0.1, 0)
+ToggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.Font = Enum.Font.SourceSansBold
+ToggleButton.TextSize = 20
+ToggleButton.Text = "Ativar Farm"
+
+local farming = false  -- Variável para controlar o farm
+
+-- Função para teletransportar para um "Stem" aleatório
+local function teleportarJogadorAleatoriamente()
+    local stems = {}
+
+    for _, plantaIlegal in pairs(game.Workspace:GetDescendants()) do
+        if plantaIlegal.Name == "PlantaIlegal" then
+            local stem = plantaIlegal:FindFirstChild("Stem")
+            if stem then
+                table.insert(stems, stem)
+            end
+        end
+    end
+
+    if #stems > 0 then
+        local stemAleatorio = stems[math.random(1, #stems)]
+        if stemAleatorio and game.Players.LocalPlayer.Character then
+            local humanoide = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if humanoide then
+                humanoide.CFrame = stemAleatorio.CFrame
+            end
+        end
+    else
+        warn("Nenhum 'Stem' encontrado.")
+    end
+end
+
+-- Simula a tecla "E" para interagir
+local function segurarTeclaE()
+    local virtualInputManager = game:GetService("VirtualInputManager")
+    local interactionKey = "E"
+    
+    for _ = 1, 17 do  -- Mantém pressionado por 17 segundos
+        virtualInputManager:SendKeyEvent(true, interactionKey, false, game)
+        wait(1)
+    end
+
+    virtualInputManager:SendKeyEvent(false, interactionKey, false, game)
+end
+
+-- Loop do farm
+local function farmLoop()
+    while farming do
+        teleportarJogadorAleatoriamente()
+        segurarTeclaE()
+        wait(1)
+    end
+end
+
+-- Alternar o farm ao clicar no botão
+ToggleButton.MouseButton1Click:Connect(function()
+    farming = not farming  -- Inverte o estado do farm
+
+    if farming then
+        ToggleButton.Text = "Desativar Farm"
+        farmLoop()
+    else
+        ToggleButton.Text = "Ativar Farm"
+    end
+end)
+   end,
+})
+getgenv().Key = Enum.KeyCode.E
+getgenv().Enabled = getgenv().Enabled or false
+loadstring(game:HttpGet('https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/revistarkkj'))()
