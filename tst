@@ -505,7 +505,33 @@ ToggleButton.MouseButton1Click:Connect(function()
 end)
    end,
 })
+local Button2 = otoTab:CreateButton({
+   Name = "hope server",
+   Callback = function()
+   local gameId = 4766797229
 
+local Http = game:GetService("HttpService")
+local TeleportService = game:GetService("TeleportService")
+local servers = Http:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..gameId.."/servers/Public?sortOrder=Desc&limit=100"))
+
+local currentJobId = game.JobId
+local targetServer = nil
+
+for _, server in pairs(servers.data) do
+    if server.playing > 0 and server.id ~= currentJobId then
+        targetServer = server.id
+        break
+    end
+end
+
+if targetServer then
+    TeleportService:TeleportToPlaceInstance(gameId, targetServer, game.Players.LocalPlayer)
+else
+    print("Não foi possível encontrar um novo servidor.")
+end
+
+   end,
+})
 
 getgenv().Key = Enum.KeyCode.E
 getgenv().Enabled = getgenv().Enabled or false
