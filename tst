@@ -405,14 +405,20 @@ local Section = rev:CreateSection("Info")
 local Paragraph = rev:CreateParagraph({Title = "Como usar?", Content = "Ensinamos a usar corretamente no nosso discord."})
 local otoTab = Window:CreateTab("Outros")
 local Paragraph = otoTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
-local tgle = otoTab:CreateToggle({
-    Name = "anti staff",
+local Toggle = otoTab:CreateToggle({
+    Name = "anti staff V2",
     CurrentValue = false,
-    Flag = "StaffCheckerToggle",
+    Flag = "ToggleKickCheck",
     Callback = function(Value)
-        checkActive = Value -- Ativa ou desativa a verificação
+        if Value then
+            getgenv().KickCheck = true
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/staffv2'))()
+        else
+            getgenv().KickCheck = false
+        end
     end
 })
+
 
 -- Loop para checar a cada 5 segundos, apenas se ativado
 task.spawn(function()
