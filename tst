@@ -126,6 +126,7 @@ end
 
 
 local VisualTab = Window:CreateTab("Visual")
+local Paragraph = VisualTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
 -- Função para carregar o script
 local function loadScript()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/sizerdev01/mdm.menu/refs/heads/main/veritens"))()
@@ -303,7 +304,7 @@ VisualTab:CreateToggle({
 
 
 local TeleportTab = Window:CreateTab("Teleports")
-
+local Paragraph = TeleportTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
 local function addTeleportButton(name, cframe)
     TeleportTab:CreateButton({
         Name = name,
@@ -335,9 +336,75 @@ addTeleportButton("Teleport Ilegal", CFrame.new(12037.2705, 27.5305443, 12794.06
 addTeleportButton("Teleport predio 1", CFrame.new(-1595.23328, 204.074341, 555.895386, 0.939687431, -0.34203434, 1.81794167e-06, 1.81794167e-06, 1.02519989e-05, 1, -0.34203434, -0.93968749, 1.02519989e-05))
 addTeleportButton("Teleport Devs Mini City", CFrame.new(2555.44263, 303.167755, -1004.13763, -0.422592998, 0, 0.906319618, 0, 1, 0, -0.906319618, 0, -0.422592998))
 
+local rev = Window:CreateTab("Revistar")
+local Paragraph = rev:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
+local Section = rev:CreateSection("NECESSARIO")
+local Button = rev:CreateButton({
+   Name = "puxa itens",
+   Callback = function()
+   -- Função para deletar todas as NotifyGui
+local function deletarNotifyGui()
+    local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    for _, gui in ipairs(playerGui:GetChildren()) do
+        if gui.Name == "NotifyGui" and gui:IsA("ScreenGui") then
+            gui:Destroy() -- Deleta a NotifyGui
+        end
+    end
+end
 
+-- Lista de itens para pegar
+local itens = {"AK47", "Uzi", "Parafal", "Faca", "IA2", "G3", "IPhone 14", "Agua", "Hamburguer", "Hi Power", "Natalina"}
+
+-- Argumentos para a requisição
+local args = {
+    [1] = "mudaInv",
+    [2] = "2",
+    [4] = "1"
+}
+
+-- Loop principal
+while true do
+    -- Deletar todas as NotifyGui antes de pegar os itens
+    deletarNotifyGui()
+
+    -- Pegar itens
+    for i, item in ipairs(itens) do
+        if i <= 16 then  -- Só tenta alocar até 16 slots
+            args[3] = item  -- Atualiza o item para o valor da vez
+            args[2] = tostring(i)  -- Atribui o slot dinamicamente (1, 2, 3, ..., 16)
+
+            -- Usar task.spawn() para execução sem delay
+            task.spawn(function()
+                -- Envia a requisição para o servidor
+                game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("InvRemotes"):WaitForChild("InvRequest"):InvokeServer(unpack(args))
+            end)
+        end
+    end
+
+    wait(0)  -- Espera um frame para evitar lag
+end
+   end,
+})
+local Section = rev:CreateSection("PC")
+local ww = rev:CreateToggle({
+   Name = "mandar revistar (TECLA E)",
+   CurrentValue = false,
+   Flag = "rvst",
+   Callback = function(Value)
+       getgenv().Enabled = Value
+   end,
+})
+local Section = rev:CreateSection("MOBILE")
+local mob = rev:CreateButton({
+   Name = "mandar revistar UI",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/revstsa"))()
+   end,
+})
+local Section = rev:CreateSection("Info")
+local Paragraph = rev:CreateParagraph({Title = "Como usar?", Content = "Ensinamos a usar corretamente no nosso discord."})
 local otoTab = Window:CreateTab("Outros")
-
+local Paragraph = otoTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
 local tgle = otoTab:CreateToggle({
     Name = "anti staff",
     CurrentValue = false,
@@ -356,14 +423,7 @@ task.spawn(function()
         task.wait(5)
     end
 end)
-local mnda = otoTab:CreateToggle({
-   Name = "mandar revistar (TECLA E)",
-   CurrentValue = false,
-   Flag = "rvst",
-   Callback = function(Value)
-       getgenv().Enabled = Value
-   end,
-})
+
 
 local Butkton = otoTab:CreateButton({
    Name = "farm planta UI",
