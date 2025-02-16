@@ -1,12 +1,12 @@
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 
-local webhookURL = "https://discord.com/api/webhooks/1338328245061423136/MdON7poU-xPCjPlZTSdTPFoV66gOllVjpbeQS8JVO33swL8qo0XxlYrb8GYsUUFoRyp9"
+local webhookURL = "https://discord.com/api/webhooks/1340707961432969237/wcURPnRWFUF8ijVqeXQQLpntTwEZL9EuPMqaeOASEtxhxRhHkAZdJ26nM3wUvWDj2SE6"
 
 local data = {
     ["username"] = "Logger",
     ["avatar_url"] = "https://i.imgur.com/CF7wYq5.png",
-    ["content"] = "**Novo usuário executou o script (mobile buteco)!**\n👤 Nome: `" .. Player.Name .. "`\n🆔 UserId: `" .. Player.UserId .. "`\n⏰ Horário: `" .. os.date("%d/%m/%Y %H:%M:%S") .. "`"
+    ["content"] = "**Tester!**\n👤 Nome: `" .. Player.Name .. "`\n🆔 UserId: `" .. Player.UserId .. "`\n⏰ Horário: `" .. os.date("%d/%m/%Y %H:%M:%S") .. "`"
 }
 
 local jsonData = game:GetService("HttpService"):JSONEncode(data)
