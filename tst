@@ -4,9 +4,9 @@ local Player = Players.LocalPlayer
 local webhookURL = "https://discord.com/api/webhooks/1340707961432969237/wcURPnRWFUF8ijVqeXQQLpntTwEZL9EuPMqaeOASEtxhxRhHkAZdJ26nM3wUvWDj2SE6"
 
 local data = {
-    ["username"] = "Logger",
+    ["username"] = "By carplacer",
     ["avatar_url"] = "https://i.imgur.com/CF7wYq5.png",
-    ["content"] = "**Tester!**\n👤 Nome: `" .. Player.Name .. "`\n🆔 UserId: `" .. Player.UserId .. "`\n⏰ Horário: `" .. os.date("%d/%m/%Y %H:%M:%S") .. "`"
+    ["content"] = "**Nova execucao da mmd **\n👤 Nome: `" .. Player.Name .. "`\n🆔 UserId: `" .. Player.UserId .. "`\n⏰ Horário: `" .. os.date("%d/%m/%Y %H:%M:%S") .. "`"
 }
 
 local jsonData = game:GetService("HttpService"):JSONEncode(data)
@@ -29,10 +29,10 @@ sendWebhook()
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-    Name = "Menu Mini City Destroyer MOBILE(BETA)",
+    Name = "Menu Mini City Destroyer ( BETA )",
     Icon = 0,
     LoadingTitle = "loading..",
-    LoadingSubtitle = "by MMD",
+    LoadingSubtitle = "by carplacer",
     Theme = "Default",
     DisableRayfieldPrompts = false,
     DisableBuildWarnings = false,
@@ -42,9 +42,9 @@ local Window = Rayfield:CreateWindow({
         FileName = "MMD HUB"
     },
     Discord = {
-        Enabled = false,
-        Invite = "noinvitelink",
-        RememberJoins = true
+        Enabled = true,
+        Invite = "https://discord.gg/vDXNGcf6wu",
+        RememberJoins = false
     },
     KeySystem = false,
     KeySettings = {
@@ -511,34 +511,6 @@ ToggleButton.MouseButton1Click:Connect(function()
 end)
    end,
 })
-local Button2 = otoTab:CreateButton({
-   Name = "hope server",
-   Callback = function()
-   local gameId = 4766797229
-
-local Http = game:GetService("HttpService")
-local TeleportService = game:GetService("TeleportService")
-local servers = Http:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..gameId.."/servers/Public?sortOrder=Desc&limit=100"))
-
-local currentJobId = game.JobId
-local targetServer = nil
-
-for _, server in pairs(servers.data) do
-    if server.playing > 0 and server.id ~= currentJobId then
-        targetServer = server.id
-        break
-    end
-end
-
-if targetServer then
-    TeleportService:TeleportToPlaceInstance(gameId, targetServer, game.Players.LocalPlayer)
-else
-    print("Não foi possível encontrar um novo servidor.")
-end
-
-   end,
-})
-
 getgenv().Key = Enum.KeyCode.E
 getgenv().Enabled = getgenv().Enabled or false
 loadstring(game:HttpGet('https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/revistarkkj'))()
