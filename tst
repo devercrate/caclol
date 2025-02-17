@@ -50,7 +50,7 @@ end
 
 local Window = Rayfield:CreateWindow({
     Name = "Menu Mini City Destroyer (Version 0.5)",
-    LoadingTitle = "Aimbot Configuration",
+    LoadingTitle = "MMD",
     LoadingSubtitle = "by carplacer",
     ConfigurationSaving = {
         Enabled = true,
