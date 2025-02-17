@@ -401,6 +401,9 @@ VisualTab:CreateToggle({
 
 local TeleportTab = Window:CreateTab("Teleports")
 local Paragraph = TeleportTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
+
+
+local Section = TeleportTab:CreateSection("TELEPORTS")
 local function addTeleportButton(name, cframe)
     TeleportTab:CreateButton({
         Name = name,
@@ -422,7 +425,7 @@ addTeleportButton("Teleport Concessionaria", CFrame.new(-91.3902893, 8.07136822,
 addTeleportButton("Teleport Gari", CFrame.new(-518.672852, 3.16749811, -1.16962147, 0, 0, -1, 0, 1, 0, 1, 0, 0))
 addTeleportButton("Teleport Imobiliaria", CFrame.new(-284.904785, 8.26088619, -72.2896194, 0, 0, -1, 0, 1, 0, 1, 0, 0))
 addTeleportButton("Teleport PM", CFrame.new(-980.181458, 2.27553082, 467.080536, 1, 0, 0, 0, 1, 0, 0, 0, 1))
-addTeleportButton("Teleport PRF", CFrame.new(-2165.34546, 3.01715183, -737.137878, -1, 0, 0, 0, 1, 0, 0, 0, -1))
+addTeleportButton("Teleport PRF", CFrame.new(6662.24512, 36.6637421, 5047.83838, 0.707134247, 0, 0.707079291, 0, 1, 0, -0.707079291, 0, 0.707134247))
 addTeleportButton("Teleport Mineração", CFrame.new(201.932144, 2.76136589, 145.50531, 0, 0, 1, 0, 1, -0, -1, 0, 0))
 addTeleportButton("Teleport Mecânica", CFrame.new(-180.608261, 3.29813337, -532.4151, 0.422592998, -0, -0.906319618, 0, 1, -0, 0.906319618, 0, 0.422592998))
 addTeleportButton("Teleport Fazenda", CFrame.new(817.243225, 3.26249814, -87.316864, 0, 0, 1, 0, 1, 0, -1, 0, 0))
@@ -610,6 +613,62 @@ ToggleButton.MouseButton1Click:Connect(function()
 end)
    end,
 })
+
+local Section = otoTab:CreateSection("AUTO CL CONFIG")
+-- Verifica se getgenv está disponível
+if getgenv == nil then
+    error("getgenv não está definido neste ambiente.")
+end
+
+-- Configuração inicial do getgenv
+getgenv().KickOnLowHealth = false -- Ativar/desativar o auto kick
+getgenv().HealthThreshold = 10    -- Vida mínima antes de ser expulso
+
+-- Função para monitorar a vida do jogador
+local function monitorHealth()
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+    if character and character:FindFirstChild("Humanoid") then
+        local humanoid = character.Humanoid
+        humanoid.HealthChanged:Connect(function(health)
+            if health <= getgenv().HealthThreshold and getgenv().KickOnLowHealth then
+                player:Kick("Auto cl pq tua vida tava abaixo de " .. getgenv().HealthThreshold)
+            end
+        end)
+    end
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    monitorHealth()
+end)
+
+if game.Players.LocalPlayer.Character then
+    monitorHealth()
+end
+
+-- Criação do Toggle para ativar/desativar o auto kick
+local Toggle = otoTab:CreateToggle({
+   Name = "auto CL",
+   CurrentValue = getgenv().KickOnLowHealth,
+   Flag = "AutoKickToggle",
+   Callback = function(Value)
+       getgenv().KickOnLowHealth = Value
+   end,
+})
+
+-- Criação do Slider para ajustar o limite de vida
+local Slider = otoTab:CreateSlider({
+   Name = "kick quando vida =",
+   Range = {0, 100},
+   Increment = 1,
+   Suffix = " HP",
+   CurrentValue = getgenv().HealthThreshold,
+   Flag = "HealthThresholdSlider",
+   Callback = function(Value)
+       getgenv().HealthThreshold = Value
+   end,
+})
+
 getgenv().Key = Enum.KeyCode.E
 getgenv().Enabled = getgenv().Enabled or false
 loadstring(game:HttpGet('https://raw.githubusercontent.com/sizerdev01/keyload/refs/heads/main/revistarkkj'))()
