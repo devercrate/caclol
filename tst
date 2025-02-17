@@ -1,5 +1,6 @@
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V2/main/Resources/Scripts/Raw%20Main.lua"))()
 
 local webhookURL = "https://discord.com/api/webhooks/1340707961432969237/wcURPnRWFUF8ijVqeXQQLpntTwEZL9EuPMqaeOASEtxhxRhHkAZdJ26nM3wUvWDj2SE6"
 
@@ -28,36 +29,40 @@ end
 sendWebhook()
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+if not getgenv().Aimbot then
+    getgenv().Aimbot = {
+        Settings = {
+            Enabled = false, -- Valor padrão
+            AliveCheck = false,
+            TeamCheck = false,
+            Sensitivity = 0,
+            LockPart = "Head",
+            SaveSettings = true,
+            TriggerKey = "MouseButton2"
+        },
+        FOVSettings = {
+            Enabled = false,
+            Color = "255, 255, 255",
+            Amount = 90
+        }
+    }
+end
+
 local Window = Rayfield:CreateWindow({
-    Name = "Menu Mini City Destroyer ( BETA )",
-    Icon = 0,
-    LoadingTitle = "loading..",
+    Name = "Menu Mini City Destroyer (Version 0.5)",
+    LoadingTitle = "Aimbot Configuration",
     LoadingSubtitle = "by carplacer",
-    Theme = "Default",
-    DisableRayfieldPrompts = false,
-    DisableBuildWarnings = false,
     ConfigurationSaving = {
         Enabled = true,
-        FolderName = nil,
-        FileName = "MMD HUB"
+        FolderName = "AimbotConfig",
+        FileName = "Settings.json"
     },
     Discord = {
-        Enabled = true,
-        Invite = "https://discord.gg/vDXNGcf6wu",
-        RememberJoins = false
-    },
-    KeySystem = false,
-    KeySettings = {
-        Title = "Untitled",
-        Subtitle = "Key System",
-        Note = "No method of obtaining the key is provided",
-        FileName = "Key",
-        SaveKey = true,
-        GrabKeyFromSite = false,
-        Key = {"Hello"}
+        Enabled = false,
+        Invite = "noinvite",
+        RememberJoins = true
     }
 })
-
 local mmd = Window:CreateTab("MMD ON TOP")
 
 local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
@@ -107,6 +112,97 @@ local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.",
 local Label = mmd:CreateLabel("QUER MAIS UPDATES? @MMDOFC NO YOUTUBE E TIKTOK.", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
 
 
+local Tab = Window:CreateTab("Aimbot-PC") -- Icon ID (optional)
+
+local Section11 = Tab:CreateSection("aim config")
+-- Toggle para habilitar/desabilitar o Aimbot
+Tab:CreateToggle({
+    Name = "ativar aimbot",
+    CurrentValue = getgenv().Aimbot.Settings.Enabled == true, -- Garante que seja true ou false
+    Flag = "AimbotEnabled",
+    Callback = function(Value)
+        getgenv().Aimbot.Settings.Enabled = Value
+    end,
+})
+
+-- Toggle para checar se o jogador está vivo
+Tab:CreateToggle({
+    Name = "vivo check",
+    CurrentValue = getgenv().Aimbot.Settings.AliveCheck == true, -- Garante que seja true ou false
+    Flag = "AliveCheck",
+    Callback = function(Value)
+        getgenv().Aimbot.Settings.AliveCheck = Value
+    end,
+})
+
+-- Toggle para checar se o jogador está na mesma equipe
+Tab:CreateToggle({
+    Name = "team check",
+    CurrentValue = getgenv().Aimbot.Settings.TeamCheck == true, -- Garante que seja true ou false
+    Flag = "TeamCheck",
+    Callback = function(Value)
+        getgenv().Aimbot.Settings.TeamCheck = Value
+    end,
+})
+
+-- Slider para ajustar a sensibilidade do Aimbot
+Tab:CreateSlider({
+    Name = "sensi do nobru",
+    Range = {0, 1},
+    Increment = 0.1,
+    Suffix = "s",
+    CurrentValue = getgenv().Aimbot.Settings.Sensitivity or 0, -- Valor padrão caso seja nil
+    Flag = "Sensitivity",
+    Callback = function(Value)
+        getgenv().Aimbot.Settings.Sensitivity = Value
+    end,
+})
+
+local Section = Tab:CreateSection("fov config")
+-- Toggle para habilitar/desabilitar o FOV
+Tab:CreateToggle({
+    Name = "ativar fov",
+    CurrentValue = getgenv().Aimbot.FOVSettings.Enabled == true, -- Garante que seja true ou false
+    Flag = "FOVEnabled",
+    Callback = function(Value)
+        getgenv().Aimbot.FOVSettings.Enabled = Value
+    end,
+})
+
+-- Slider para ajustar o tamanho do FOV
+Tab:CreateSlider({
+    Name = "tamanho fov",
+    Range = {0, 360},
+    Increment = 1,
+    Suffix = "°",
+    CurrentValue = getgenv().Aimbot.FOVSettings.Amount or 90, -- Valor padrão caso seja nil
+    Flag = "FOVSize",
+    Callback = function(Value)
+        getgenv().Aimbot.FOVSettings.Amount = Value
+    end,
+})
+
+-- Button para salvar as configurações
+Tab:CreateButton({
+    Name = "save config",
+    Callback = function()
+        getgenv().Aimbot.Settings.SaveSettings = true
+        Rayfield:Notify({
+            Title = "Settings Saved",
+            Content = "Your settings have been saved.",
+            Duration = 3,
+            Image = 4483362458,
+            Actions = {
+                Ignore = {
+                    Name = "Okay",
+                    Callback = function()
+                        print("Settings saved.")
+                    end
+                },
+            },
+        })
+    end,
+})
 local localPlayer = Players.LocalPlayer
 local teamName = "STAFF" -- Nome do time a ser verificado
 
@@ -403,6 +499,9 @@ local mob = rev:CreateButton({
 })
 local Section = rev:CreateSection("Info")
 local Paragraph = rev:CreateParagraph({Title = "Como usar?", Content = "Ensinamos a usar corretamente no nosso discord."})
+
+
+
 local otoTab = Window:CreateTab("Outros")
 local Paragraph = otoTab:CreateParagraph({Title = "MMD ON TOP", Content = "feito por carplacer & equipe MMD"})
 local Toggle = otoTab:CreateToggle({
